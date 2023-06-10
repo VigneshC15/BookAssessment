@@ -1,5 +1,8 @@
+
+/*	Create Database	*/
 Create Database Books;
 
+/*	Create Table	*/
 USE [Books]
 GO
 
@@ -33,6 +36,45 @@ CREATE TABLE [dbo].[tbl_Books](
 	[BookId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
+GO
+
+
+/*	Create Procedure 1	*/
+USE [Books]
+GO
+
+/****** Object:  StoredProcedure [dbo].[GetBooksSortedByAuthor]    Script Date: 10-06-2023 23:54:26 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE PROCEDURE [dbo].[GetBooksSortedByAuthor]
+AS
+BEGIN
+    SELECT * FROM tbl_Books where IsActive=1 and IsDeleted=0  ORDER BY CONCAT(AuthorLastName, ' ', AuthorFirstName), Title
+END
+GO
+
+/*	Create Procedure 2	*/
+USE [Books]
+GO
+
+/****** Object:  StoredProcedure [dbo].[GetStortedBooks]    Script Date: 10-06-2023 23:55:52 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE PROCEDURE [dbo].[GetStortedBooks]
+AS
+BEGIN
+    SELECT * FROM tbl_Books where IsActive=1 and IsDeleted=0  order by Publisher,AuthorLastName,AuthorFirstName,Title
+END
 GO
 
 
