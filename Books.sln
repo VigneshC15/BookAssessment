@@ -7,8 +7,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{9872985C-56D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BooksAPI", "BooksAPI\BooksAPI.csproj", "{7A370178-0D21-401A-A7F2-0BCA3EBA199B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL Scripts", "SQL Scripts", "{1A3C6CBC-EAC9-4629-9671-5EAF799EE52F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Prerequisites", "Prerequisites", "{1A3C6CBC-EAC9-4629-9671-5EAF799EE52F}"
 	ProjectSection(SolutionItems) = preProject
+		SampleData.txt = SampleData.txt
 		SQL.txt = SQL.txt
 	EndProjectSection
 EndProject
