@@ -9,10 +9,18 @@ namespace BooksAPI.Repo
     public class BookRepository : IBookRepository
     {
         private readonly IDbConnection _dbConnection;
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="dbConnection"></param>
         public BookRepository(IDbConnection dbConnection)
         {
             _dbConnection = dbConnection;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public async Task<BookApiResponse> GetStortedBooksAsync()
         {
             BookApiResponse BookApiResponse = new BookApiResponse();
@@ -34,6 +42,10 @@ namespace BooksAPI.Repo
             }
             return BookApiResponse;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public async Task<BookApiResponse> GetBooksSortedByAuthorAsync()
         {
             BookApiResponse BookApiResponse = new BookApiResponse();
@@ -55,7 +67,10 @@ namespace BooksAPI.Repo
             }
             return BookApiResponse;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public async Task<BookApiResponse> GetTotalPriceOfBooksAsync()
         {
             BookApiResponse BookApiResponse = new BookApiResponse();
@@ -76,7 +91,11 @@ namespace BooksAPI.Repo
             }
             return BookApiResponse;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="books"></param>
+        /// <returns></returns>
         public async Task<BookApiResponse> SaveBooksAsync(List<Book> books)
         {
             BookApiResponse BookApiResponse = new BookApiResponse();
