@@ -73,7 +73,7 @@ GO
 CREATE PROCEDURE [dbo].[GetStortedBooks]
 AS
 BEGIN
-    SELECT * FROM tbl_Books where IsActive=1 and IsDeleted=0  order by Publisher,AuthorLastName,AuthorFirstName,Title
+    SELECT * FROM tbl_Books where IsActive=1 and IsDeleted=0  order by Publisher,CONCAT(AuthorLastName, ' ', AuthorFirstName),Title
 END
 GO
 
